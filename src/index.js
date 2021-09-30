@@ -1,10 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { Home } from 'pages/Home'
 
 ReactDOM.render(
   <React.StrictMode>
-    {/* All starts here by Borja*/}
-    {/* All starts here by Giorgio */}
+
+    <Home />
+    
   </React.StrictMode>,
   document.getElementById('root')
 )
