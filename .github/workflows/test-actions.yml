@@ -3,7 +3,7 @@ on: pull_request
 jobs: 
   check-bats-version:
     runs-on: ubuntu-latest
-    steps: 
+    steps:
       - uses: actions/checkout@v2
-      - uses: npm ci
-      - uses: npm run test
+      - run: npm ci
+      - run: npm run test
