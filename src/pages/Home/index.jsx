@@ -1,7 +1,11 @@
+import Featured from 'components/featured'
+
 export const Home = () => {
   return(
-    <>
-      Hello again
-    </>
+    <section>
+      <Featured />
+      <Featured />
+      <Featured />
+    </section>
   )
 }
