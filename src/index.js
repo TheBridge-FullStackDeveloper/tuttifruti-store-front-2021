@@ -1,12 +1,13 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import { Home } from 'pages/Home'
+import React from "react";
+import ReactDOM from "react-dom";
+import Products from "pages/Products";
+import { ChakraProvider } from "@chakra-ui/react";
 
 ReactDOM.render(
   <React.StrictMode>
-
-    <Home />
-    
+    <ChakraProvider>
+      <Products />
+    </ChakraProvider>
   </React.StrictMode>,
-  document.getElementById('root')
-)
+  document.getElementById("root")
+);
