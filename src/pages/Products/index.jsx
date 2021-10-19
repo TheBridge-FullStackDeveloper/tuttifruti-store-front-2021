@@ -1,12 +1,14 @@
 import { getProducts } from "services";
 import { useEffect, useState } from "react";
+import ProductCard from "components/card";
+import { Box } from "@chakra-ui/react";
 
 export default () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
     async function fetchData() {
-      const results = await getProducts();
+      const results = await getProducts(1, 5);
       console.log("results", results);
       for (let product of results.products) {
         setProducts((prevState) => [...prevState, product]);
@@ -16,13 +18,14 @@ export default () => {
   }, []);
 
   return (
-    <div>
-      <h1>This is the Products page</h1>
-      {products
-        ? products.map((product, i) => {
-            return <p key={i}>{product.name}</p>;
-          })
-        : null}
-    </div>
+    <Box d="flex">
+      {products ? (
+        products.map((product, i) => {
+          return <ProductCard key={i} {...product} />;
+        })
+      ) : (
+        <h4>Loading...</h4>
+      )}
+    </Box>
   );
 };
