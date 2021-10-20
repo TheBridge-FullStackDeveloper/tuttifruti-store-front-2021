@@ -1,7 +1,3 @@
-export const Home = () => {
-  return(
-    <>
-      Hello again
-    </>
-  )
-}
+export default () => {
+  return <>Hello again</>;
+};
