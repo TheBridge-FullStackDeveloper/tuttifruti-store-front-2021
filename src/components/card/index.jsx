@@ -8,10 +8,9 @@ import {
   Image,
 } from "@chakra-ui/react";
 
-const IMAGE =
-  "https://images.unsplash.com/photo-1518051870910-a46e30d9db16?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80";
 
-export default function ProductCard({ name, category, price }) {
+
+export default function ProductCard({ name, category, price, product_pic }) {
   return (
     <Center py={12}>
       <Box
@@ -39,7 +38,7 @@ export default function ProductCard({ name, category, price }) {
             pos: "absolute",
             top: 5,
             left: 0,
-            backgroundImage: `url(${IMAGE})`,
+            backgroundImage: `url(${product_pic})`,
             filter: "blur(15px)",
             zIndex: -1,
           }}
@@ -54,7 +53,7 @@ export default function ProductCard({ name, category, price }) {
             height={230}
             width={282}
             objectFit={"cover"}
-            src={IMAGE}
+            src={product_pic}
           />
         </Box>
         <Stack pt={10} align={"center"}>
