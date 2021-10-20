@@ -2,17 +2,26 @@ import { useEffect, useState } from "react"
 
 import products from 'services'
 
+
 export default () => {
-    const [featuredProducts, setFeaturedProducts] = useState(null)
+
+    const [state, setState] = useState([])
     useEffect(() => {
-        const fetch = async () => {
-            const response = await products.getFeatured()
-            setFeaturedProducts(response)
-        }
+        (async () => {
+            const result = await products.getFeatured()
+            setState(result.data.featured)
+        })()
+
     }, [])
-    return (
-        <section>
-            Hola hola
-        </section>
+    console.log("STATE", state)
+
+    return(
+        state.map(element => {
+            return (
+                <section>
+                    <p>{element.name}</p>
+                </section>
+            )
+        })
     )
-}
+    }

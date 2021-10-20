@@ -4,8 +4,6 @@ export const Home = () => {
   return(
     <section>
       <Featured />
-      <Featured />
-      <Featured />
     </section>
   )
 }

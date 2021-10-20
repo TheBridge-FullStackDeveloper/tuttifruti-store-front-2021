@@ -1,5 +1,5 @@
 import { catcher } from "services/helpers";
-
+console.log("entra entra")
 export const getFeatured = ({ get }) => async () => {
-    await catcher(get)('/products/featured')
+    return await catcher(get)('/products/featured')
 }
