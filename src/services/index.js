@@ -7,6 +7,8 @@ const client = axios.create({
     "Content-Type": "application/json",
   },
 });
+const products = {
+  getProducts: getAll(client),
+};
 
-const getProducts = getAll(client);
-export { getProducts };
+export { products };
