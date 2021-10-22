@@ -5,7 +5,8 @@ import {
   Container,
   Flex,
   VStack,
-  Box
+  Box,
+  Heading
 } from "@chakra-ui/react"
 import "@fontsource/gluten"
 import "@fontsource/raleway"
@@ -16,14 +17,14 @@ const Home = () => {
   return (
     <>
       <Container maxW="full" fontFamily="Gluten" color="teal" fontSize={80}>
-        Welcome to the home page!
+        <Heading fontFamily="Raleway">Welcome to the home page!</Heading>
 
       </Container>
 
       <SearchBox/>
 
-      <Container maxW="container.xl" p={4} borderColor="green" borderWidth={4} margin={3}>
-        <Flex h="90vh" py={20}>
+      <Container minW="container.xl" p={4} borderStyle="double" borderColor="teal" borderWidth={4} margin={10}>
+        <Flex h="90vh" px={-8} py={5}>
           <VStack
             v="full"
             h="full"

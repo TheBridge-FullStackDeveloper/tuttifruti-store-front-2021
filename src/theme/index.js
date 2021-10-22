@@ -8,9 +8,9 @@ import "@fontsource/source-code-pro/600.css";
 import {extendTheme, theme as base} from "@chakra-ui/react"
 const theme = extendTheme({
 	fonts: {
-		heading: `Source Code Pro, ${base.fonts?.heading}`,
+		heading: `Gluten, ${base.fonts?.heading}`,
 		body: `Raleway, ${base.fonts?.body}`,
-		mono: `Gluten, ${base.fonts?.mono}`
+		mono: `Source Code Pro, ${base.fonts?.mono}`
 	},
 });
 
