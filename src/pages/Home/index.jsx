@@ -22,7 +22,7 @@ const Home = () => {
 
       <SearchBox/>
 
-      <Container maxW="container.xl" p={4} borderColor="green" borderWidth={2}>
+      <Container maxW="container.xl" p={4} borderColor="green" borderWidth={4} margin={3}>
         <Flex h="90vh" py={20}>
           <VStack
             v="full"

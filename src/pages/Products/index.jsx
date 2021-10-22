@@ -1,7 +1,7 @@
 import { products } from "services";
 import { useEffect, useState } from "react";
 import ProductCard from "components/card";
-import { Box } from "@chakra-ui/react";
+import { Flex } from "@chakra-ui/react";
 
 export default () => {
   const [items, setItems] = useState([]);
@@ -15,14 +15,12 @@ export default () => {
   }, []);
 
   return (
-    <Box d="flex">
-      {items.length ? (
-        items.map((item, i) => {
-          return <ProductCard key={i} {...item} />;
-        })
-      ) : (
-        <h4>Loading...</h4>
-      )}
-    </Box>
+    <Flex d="flex">
+      {items.length ?
+      (items.map((item, i) => {
+          return <ProductCard key={i} {...item}/>;
+        })) :
+      (<h4>Loading...</h4>)}
+    </Flex>
   );
 };
