@@ -4,11 +4,13 @@ import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import { ChakraProvider } from "@chakra-ui/react";
 
 import routes from "routes";
+import Header from "./components/header";
 
 ReactDOM.render(
   <React.StrictMode>
     <ChakraProvider>
       <BrowserRouter>
+        <Header />
         <Switch>
           {routes.map((route, index) => (
             <Route {...route} key={index} />
