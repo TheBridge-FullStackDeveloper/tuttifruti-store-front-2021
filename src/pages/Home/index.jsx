@@ -1,6 +1,7 @@
-import SearchBox from "components/Searchbox"
+import Searchbar from "components/Searchbar"
 import Products from "pages/Products"
 import Pagination from "components/Pagination"
+import Featured from "components/Featured"
 import {
   Container,
   Flex,
@@ -21,7 +22,7 @@ const Home = () => {
 
       </Container>
 
-      <SearchBox/>
+      <Searchbar/>
 
       <Container minW="container.xl" p={4} borderStyle="double" borderColor="teal" borderWidth={4} margin={10}>
         <Flex h="90vh" px={-8} py={5}>
@@ -38,6 +39,7 @@ const Home = () => {
           </VStack>
         </Flex>
         </Container>
+        <Featured/>
     </>
   )
 }
