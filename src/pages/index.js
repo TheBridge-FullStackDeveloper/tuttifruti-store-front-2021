@@ -1,16 +1,13 @@
-import { ChakraProvider, theme, CSSReset } from "@chakra-ui/core";
-import Products from "pages/Products";
 import Home from "pages/Home";
+import SingleProduct from "pages/SingleProduct"
 
 const App = () => {
-
 	return (
 		<>
-			<Home/>
-			<Products/>
+			<Home />
+			<SingleProduct/>
 		</>
-	)
+	);
+};
 
-}
-
-export default App
+export default App;
