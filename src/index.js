@@ -2,13 +2,14 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import { ChakraProvider, CSSReset } from "@chakra-ui/react";
+import { theme } from "theme";
 
 import routes from "routes";
 import Header from "./components/header";
 
 ReactDOM.render(
 	<React.StrictMode>
-		<ChakraProvider>
+		<ChakraProvider theme={theme}>
 			<CSSReset />
 			<BrowserRouter>
 				<Header />
