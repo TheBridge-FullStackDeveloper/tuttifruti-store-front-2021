@@ -1,12 +1,25 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import { Home } from 'pages/Home'
+import React from "react";
+import ReactDOM from "react-dom";
+import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
+import { ChakraProvider, CSSReset } from "@chakra-ui/react";
+
+import routes from "routes";
+import Header from "./components/header";
 
 ReactDOM.render(
-  <React.StrictMode>
-
-    <Home />
-    
-  </React.StrictMode>,
-  document.getElementById('root')
-)
+	<React.StrictMode>
+		<ChakraProvider>
+			<CSSReset />
+			<BrowserRouter>
+				<Header />
+				<Switch>
+					{routes.map((route, index) => (
+						<Route {...route} key={index} />
+					))}
+					<Redirect to="/home" />
+				</Switch>
+			</BrowserRouter>
+		</ChakraProvider>
+	</React.StrictMode>,
+	document.getElementById("root")
+);
