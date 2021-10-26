@@ -5,6 +5,7 @@ import { ChakraProvider } from "@chakra-ui/react";
 
 import routes from "routes";
 import Header from "./components/header";
+import Pagination from "./components/pagination"
 
 ReactDOM.render(
   <React.StrictMode>
@@ -17,6 +18,7 @@ ReactDOM.render(
           ))}
           <Redirect to="/home" />
         </Switch>
+        <Pagination />
       </BrowserRouter>
     </ChakraProvider>
   </React.StrictMode>,
