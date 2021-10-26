@@ -6,3 +6,12 @@ export const getAll = ({ get }) => async (page, perpage) => {
     return false;
   }
 };
+
+export const getByCategory = ({ post }) => async (category) => {
+  try {
+    return (await post(`/products?category=${category}`)).data;
+  } catch (error) {
+    console.info("Cannot get products by category");
+    return false;
+  }
+};

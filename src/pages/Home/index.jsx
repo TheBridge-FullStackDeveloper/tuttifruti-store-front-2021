@@ -1,16 +1,36 @@
+// components
+import {
+  Container,
+  Flex,
+  VStack,
+  Box,
+  Heading,
+  Button,
+} from "@chakra-ui/react";
 import Searchbar from "components/Searchbar";
 import Products from "components/Products";
 import Pagination from "components/Pagination";
 import Featured from "components/Featured";
-import useFetchProducts from "hooks/useFetchProducts";
-import { products } from "services";
-import { Container, Flex, VStack, Box, Heading } from "@chakra-ui/react";
+import { Categories } from "components/Categories";
+// styles
 import "@fontsource/gluten";
 import "@fontsource/raleway";
 import "@fontsource/source-code-pro";
+// hooks
+import { useEffect, useState } from "react";
+import useFetchProducts from "hooks/useFetchProducts";
+import { useFetchByCategory } from "hooks/useFetchCategory";
+// fetch
+import { products } from "services";
 
 const Home = () => {
   const listOfProducts = useFetchProducts(products);
+
+  // by category
+  const [category, setcategory] = useState("chicle");
+  const handleCategory = (e) => setcategory(e.target.value);
+  const productsByCategory = useFetchByCategory(category);
+
   return (
     <>
       <Container maxW="full" fontFamily="Gluten" color="teal" fontSize={80}>
@@ -18,6 +38,23 @@ const Home = () => {
       </Container>
 
       <Searchbar />
+
+      {/* render categories and products */}
+      {/* <Categories /> */}
+      <VStack>
+        <Flex>
+          <Button value="chicle" onClick={handleCategory}>
+            Chicle
+          </Button>
+          <Button value="pipas" onClick={handleCategory}>
+            Pipas
+          </Button>
+        </Flex>
+        <Flex>
+          <Products v="100" h="20" items={productsByCategory} />
+        </Flex>
+      </VStack>
+      {/* render category */}
 
       <Container
         minW="container.xl"
