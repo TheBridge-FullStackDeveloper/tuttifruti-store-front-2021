@@ -7,7 +7,7 @@ export const getAll = ({ get }) => async (page, perpage) => {
   }
 };
 
-export const getProduct = ({get}) =>
+export const getOneProduct = ({get}) =>
 async (id) => {
   try {
     return (await get(`/products?id=${id}`)).data;
