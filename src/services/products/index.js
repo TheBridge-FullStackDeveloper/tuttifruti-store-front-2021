@@ -6,3 +6,12 @@ export const getAll = ({ get }) => async (page, perpage) => {
     return false;
   }
 };
+
+export const getProduct = ({get}) =>
+async (id) => {
+  try {
+    return (await get(`/products?id=${id}`)).data;
+  } catch (error) {
+    console.info("Cannot find specified product")
+  }
+}

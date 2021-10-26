@@ -1,5 +1,5 @@
 import Home from "pages/Home";
-import SingleProduct from "pages/SingleProduct"
+import SingleProduct from "pages/Product"
 
 const App = () => {
 	return (
