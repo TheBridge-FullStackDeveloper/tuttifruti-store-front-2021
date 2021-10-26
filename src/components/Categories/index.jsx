@@ -17,6 +17,10 @@ export const Categories = () => {
     <>
       <Flex w={800} textAlign="center" margin="auto" my={8} bg="red.200">
       </Flex>
+    
+    <form action="">
+      
+    </form>
     </>
   );
 };
