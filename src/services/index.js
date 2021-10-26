@@ -2,7 +2,7 @@ import axios from "axios";
 import { getAll } from "./products";
 
 const client = axios.create({
-  baseURL: "http://localhost:3000",
+  baseURL: "https://tutti-frutti-store.herokuapp.com/",
   headers: {
     "Content-Type": "application/json",
   },

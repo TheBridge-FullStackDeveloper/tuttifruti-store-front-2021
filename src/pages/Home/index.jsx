@@ -34,7 +34,10 @@ const Home = () => {
             p={8}
             spacing={10}
             alignItems="center">
-            <Products v="100" h="20" items={listOfProducts}/>
+              {
+                listOfProducts ? <Products v="100" h="20" items={listOfProducts}/> : <p> Hola </p>
+              }
+            
             <Box alignContent="center" fontFamily="Source Code Pro">
               <Pagination/>
             </Box>
