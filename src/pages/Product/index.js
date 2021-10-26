@@ -8,7 +8,7 @@ import {
 	Stack,
 	Image,
 } from "@chakra-ui/react";
-import { Link as ReachLink } from "@reach/router";
+import { Link } from "react-router-dom";
 import {ArrowBackIcon} from "@chakra-ui/icons"
 import "@fontsource/gluten";
 import "@fontsource/raleway";
@@ -18,7 +18,7 @@ export default function SingleProduct() {
 	return (
 		<>
 			<Button
-				as={ReachLink}
+				as={Link}
 				to="/home"
 				variantColor="teal"
 				size="md"
