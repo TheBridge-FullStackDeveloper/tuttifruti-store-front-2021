@@ -7,7 +7,6 @@ const useFetchProducts = (productService, search) => {
     async function fetchData() {
       if (search) {
         const results = await productService.getSearchedProducts(search);
-        console.log("resultados", results);
         setItems(results.data);
       } else {
         const results = await productService.getProducts(1, 5);
