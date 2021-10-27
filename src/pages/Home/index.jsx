@@ -2,7 +2,7 @@ import Searchbar from "components/Searchbar";
 import Products from "components/Products";
 import Pagination from "components/Pagination";
 import Featured from "components/Featured";
-import useFetchProducts from "hooks/useFetchProducts";
+import {useFetchProducts, useFetchFeatured} from "hooks/useFetchProducts";
 import { products } from "services";
 import { Container, Flex, VStack, Box, Heading } from "@chakra-ui/react";
 import "@fontsource/gluten";
@@ -11,6 +11,9 @@ import "@fontsource/source-code-pro";
 
 const Home = () => {
   const listOfProducts = useFetchProducts(products);
+  const featuredProducts = useFetchFeatured(products)
+
+  
   return (
     <>
       <Container maxW="full" fontFamily="Gluten" color="teal" fontSize={80}>
@@ -36,7 +39,7 @@ const Home = () => {
           </VStack>
         </Flex>
       </Container>
-      <Featured />
+      <Featured items={featuredProducts} />
     </>
   );
 };

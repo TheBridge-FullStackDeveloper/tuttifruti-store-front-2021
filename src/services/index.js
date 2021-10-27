@@ -1,5 +1,5 @@
 import axios from "axios";
-import { getAll } from "./products";
+import { getAll, getFeatured } from "./products";
 
 const client = axios.create({
   baseURL: "https://tutti-frutti-store.herokuapp.com/",
@@ -9,6 +9,7 @@ const client = axios.create({
 });
 const products = {
   getProducts: getAll(client),
+  getFeatured: getFeatured(client)
 };
 
 export { products };
