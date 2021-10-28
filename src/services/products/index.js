@@ -6,3 +6,12 @@ export const getAll = ({ get }) => async (page, perpage) => {
     return false;
   }
 };
+
+export const getBySearch = ({ post }) => async (search) => {
+  try {
+    return (await post(`/products?search=${search}`)).data;
+  } catch (error) {
+    console.info("Cannot get searched products");
+    return false;
+  }
+};

@@ -8,16 +8,21 @@ import { Container, Flex, VStack, Box, Heading } from "@chakra-ui/react";
 import "@fontsource/gluten";
 import "@fontsource/raleway";
 import "@fontsource/source-code-pro";
+import { useState } from "react";
 
 const Home = () => {
-  const listOfProducts = useFetchProducts(products);
+  const [search, setsearch] = useState("");
+  const handleSearch = ({ target }) => setsearch(target.value);
+
+  const listOfProducts = useFetchProducts(products, search);
+
   return (
     <>
       <Container maxW="full" fontFamily="Gluten" color="teal" fontSize={80}>
         <Heading fontFamily="Raleway">Welcome to the home page!</Heading>
       </Container>
 
-      <Searchbar />
+      <Searchbar search={search} handleSearch={handleSearch} />
 
       <Container
         minW="container.xl"
